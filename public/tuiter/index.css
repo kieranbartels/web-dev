@@ -1,9 +1,13 @@
+.wd-black {
+    background-color: black;
+    padding: 10px;
+}
+
 .wd-background {
     background-color: black;
-    border-color: rgb(47, 51, 54);
-    padding-left: 16px;
-    padding-right: 16px;
+    border: 2px solid rgb(47, 51, 54);
     padding-top: 10px;
+    margin: 5px;
 }
 
 .wd-search-input {
@@ -15,6 +19,7 @@
     height: 25px;
     width: 450px;
     font-size: 14px;
+    margin-left:16px;
 }
 
 .wd-settings-link {
@@ -34,6 +39,7 @@
     padding: 16px 16px 16px 16px;
     border-bottom: 2px solid dodgerblue;
     text-decoration:none;
+    margin-left: 16px;
 }
 
 .wd-unselected-tab {
@@ -50,7 +56,7 @@
 
 .wd-box {
     border-style:solid;
-    border-color: gray;
+    border-color: rgb(47, 51, 54);
     border-width: 1px;
     padding: 10px;
 }
@@ -58,6 +64,7 @@
 .wd-topic {
     font-size: 13px;
     color: rgb(110, 118, 125);
+    margin-left:16px;
 }
 
 .wd-title {
@@ -66,6 +73,7 @@
     color: white;
     padding-top: 4px;
     padding-bottom: 4px;
+    margin-left: 16px;
 }
 
 .wd-container {
@@ -90,12 +98,15 @@
 .wd-bookmarks-container {
     overflow:hidden;
     margin-top: 12px;
+    margin-left: 16px;
+    border-bottom: 1px solid lightgray;
 }
 
 .wd-bookmarks-title {
     margin-top: 12px;
     color: white;
     font-size: 20px;
+    margin-left: 16px;
 }
 
 .wd-bookmarks-handle {
@@ -103,6 +114,7 @@
     color: #959595;
     font-size: 13px;
     border-bottom: 1px solid lightgray;
+    margin-left: 16px;
 }
 
 .wd-profile-picture {
@@ -161,6 +173,7 @@
 
 .wd-symbol {
     text-decoration:none;
+    margin-bottom: 5px;
 }
 
 .wd-position-0 {
