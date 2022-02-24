@@ -20,7 +20,7 @@
     border-color: #3A3B3C;
     font-size: 14px;
     padding-left: 40px;
-    width: 90%;
+    width: 85%;
     height: 40px;
 }
 
@@ -236,7 +236,7 @@
 .wd-card-footer {
     color:white;
     font-weight: bold;
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .btn-primary.override-bs {
