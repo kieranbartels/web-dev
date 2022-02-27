@@ -4,120 +4,273 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link href="index.css" rel="stylesheet"/>
+    <link href="../vendors/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+    <link href="../vendors/fontawesome/css/all.css" rel="stylesheet"/>
 </head>
 <body>
-    <div class="wd-black">
+    <div class="">
         <a href="navigation.html">Back</a>
-        <div class="wd-background">
-            <input class="wd-search-input" id="search" placeholder="Search Tuiter"/>
 
-            <span class="wd-settings">
-                <a href="explore-settings.html" class="wd-settings-link">
-                    &#9881;
-                </a>
-            </span>
-
-            <div class="wd-tab-bar">
-                <a href="#" class="wd-selected-tab">For you</a>
-                <a href="#" class="wd-unselected-tab">Trending</a>
-                <a href="#" class="wd-unselected-tab">Covid-19</a>
-                <a href="#" class="wd-unselected-tab">News</a>
-                <a href="#" class="wd-unselected-tab">Sports</a>
-                <a href="#" class="wd-unselected-tab">Entertainment</a>
-            </div>
-
-            <div class="wd-box">
-                <div class="wd-topic">
-                    Trending in Science
-                </div>
-                <div class="wd-title">
-                    Starship
-                </div>
-                <div class="wd-topic">
-                    55.5k Tuits
-                </div>
-            </div>
-
-            <div class="wd-box">
-                <div class="wd-topic">
-                    Sports · Trending
-                </div>
-                <div class="wd-title">
-                    Joe Rogan
-                </div>
-                <div class="wd-topic">
-                    5,218 Tuits
-                </div>
-            </div>
-
-            <div class="wd-box wd-container">
-                <div class="wd-left-element">
-                    <div class="wd-title">
-                        The New York Times
-                    </div>
-                    <div class="wd-title">
-                        CNN's Cuomo conundrum: A star anchor with a brother in trouble
+        <div class="row">
+            <div class="col-2">
+                <div class="d-block d-xl-none">
+                    <div class="list-group">
+                        <a href="home.html" class="list-group-item list-group-item-action ms-2">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="home.html" class="list-group-item list-group-item-action ms-2">
+                            <i class="fa fa-home"></i>
+                        </a>
+                        <a href="explore.html" class="list-group-item list-group-item-action active ms-2" aria-current="true">
+                            <i class="fa fa-hashtag"></i>
+                        </a>
+                        <a href="notifications.html" class="list-group-item list-group-item-action ms-2">
+                            <i class="fa fa-bell"></i>
+                        </a>
+                        <a href="messages.html" class="list-group-item list-group-item-action ms-2">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                        <a href="bookmarks.html" class="list-group-item list-group-item-action ms-2">
+                            <i class="fa fa-bookmark"></i>
+                        </a>
+                        <a href="lists.html" class="list-group-item list-group-item-action ms-2">
+                            <i class="fa fa-list"></i>
+                        </a>
+                        <a href="profile.html" class="list-group-item list-group-item-action ms-2">
+                            <i class="fa fa-user"></i>
+                        </a>
+                        <a href="more.html" class="list-group-item list-group-item-action ms-2">
+                            <i class="fa fa-ellipsis-h"></i>
+                        </a>
+                        <button class="btn btn-primary override-bs mt-2 ms-2">
+                            Tuit
+                        </button>
                     </div>
                 </div>
-                <div class="wd-right-element">
-                    <img src="images/cuomo.jpg" class="wd-rounded-image"/>
-                </div>
-            </div>
 
-            <div class="wd-box wd-container">
-                <div class="wd-left-element">
-                    <div class="wd-topic">
-                        COVID-19 · LIVE
+                <div class="d-none d-xl-block">
+                    <div class="list-group">
+                        <a href="home.html" class="list-group-item list-group-item-action ms-2">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="home.html" class="list-group-item list-group-item-action ms-2">
+                            <i class="fa fa-home"></i> Home
+                        </a>
+                        <a href="explore.html" class="list-group-item list-group-item-action active ms-2" aria-current="true">
+                            <i class="fa fa-hashtag"></i> Explore
+                        </a>
+                        <a href="notifications.html" class="list-group-item list-group-item-action ms-2">
+                            <i class="fa fa-bell"></i> Notifications
+                        </a>
+                        <a href="messages.html" class="list-group-item list-group-item-action ms-2">
+                            <i class="fa fa-envelope"></i> Messages
+                        </a>
+                        <a href="bookmarks.html" class="list-group-item list-group-item-action ms-2">
+                            <i class="fa fa-bookmark"></i> Bookmarks
+                        </a>
+                        <a href="lists.html" class="list-group-item list-group-item-action ms-2">
+                            <i class="fa fa-list"></i> Lists
+                        </a>
+                        <a href="profile.html" class="list-group-item list-group-item-action ms-2">
+                            <i class="fa fa-user"></i> Profile
+                        </a>
+                        <a href="more.html" class="list-group-item list-group-item-action ms-2">
+                            <i class="fa fa-ellipsis-h"></i> More
+                        </a>
+                        <button class="btn btn-primary override-bs mt-2 ms-2">
+                            Tuit
+                        </button>
                     </div>
-                    <div class="wd-title">
-                        COVID-19: New and updates for Massachusetts
-                    </div>
-                </div>
-                <div class="wd-right-element">
-                    <img src="images/covid.jpg" class="wd-rounded-image"/>
-                </div>
-            </div>
-
-            <div class="wd-box wd-container">
-                <div class="wd-left-element">
-                    <div class="wd-topic">
-                        KANYE WEST
-                    </div>
-                    <div class="wd-title">
-                        KANYE WEST: Constant Instagram posts leave fans divided.
-                    </div>
-                </div>
-                <div class="wd-right-element">
-                    <img src="images/kanye.jpg" class="wd-rounded-image"/>
                 </div>
             </div>
 
-            <div class="wd-box wd-container">
-                <div class="wd-left-element">
-                    <div class="wd-title">
-                        Bloomberg Opinion
+
+
+            <div class="col-8 col-lg-7">
+                    <span class="position-absolute mt-3 ms-4">
+                        <i class="fa fa-magnifying-glass"></i>
+                    </span>
+                    <input class="wd-search-input" id="search" placeholder="Search Tuiter"/>
+
+                    <span class="wd-settings">
+                        <a href="explore-settings.html" class="wd-settings-link">
+                            <i class="fa fa-cog"></i>
+                        </a>
+                    </span>
+
+                <ul class="nav nav-tabs mt-3 mb-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">For you</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Trending</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">News</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sports</a></li>
+                    <div class="d-none d-md-block">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Entertainment</a></li>
                     </div>
-                    <div class="wd-title">
-                        Thinking about getting a booster? Read this first.
+                </ul>
+                <div class="card">
+                    <img src="images/starship.jpg" class="card-img-top">
+                    <div class="card-img-overlay d-flex flex-column justify-content-end wd-card-footer">
+                        <p class="card-text">SpaceX's Starship</p>
                     </div>
                 </div>
-                <div class="wd-right-element">
-                    <img src="images/booster.jpg" class="wd-rounded-image"/>
+                <div class="wd-box row">
+                    <div class="col-8 col-sm-9 col-xl-10">
+                        <div class="wd-topic">
+                            Web Development
+                        </div>
+                        <span class="wd-title">
+                            ReactJS <i class="fa fa-check-circle"></i>
+                        </span>
+                        <span class="wd-topic">
+                            - 2h
+                        </span>
+                        <div class="wd-title">
+                            React.JS is a component based front end library that makes it very easy to build Single Page Applications or SPAs
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <img src="images/reactjs.png" class="wd-rounded-image"/>
+                    </div>
+                </div>
+                <div class="wd-box row">
+                    <div class="col-8 col-sm-9 col-xl-10">
+                        <span class="wd-title">
+                            JavaScript <i class="fa fa-check-circle"></i>
+                        </span>
+                        <span class="wd-topic">
+                            - 2h
+                        </span>
+                        <div class="wd-title">
+                            JavaScript is programming language that can run on browsers as well as desktops
+                        </div>
+                        <div class="wd-topic">
+                            123k Tuits
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <img src="images/js.png" class="wd-rounded-image"/>
+                    </div>
+                </div>
+                <div class="wd-box row">
+                    <div class="col-8 col-sm-9 col-xl-10">
+                        <div class="wd-topic">
+                            Web Development
+                        </div>
+                        <div class="wd-title">
+                            jQuery
+                        </div>
+                        <div class="wd-topic">
+                            123k Tuits
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <img src="images/jquery.png" class="wd-rounded-image"/>
+                    </div>
+                </div>
+                <div class="wd-box row">
+                    <div class="col-8 col-sm-9 col-xl-10">
+                        <div class="wd-topic">
+                            Web Development
+                        </div>
+                        <span class="wd-title">
+                            NodeJS <i class="fa fa-check-circle"></i>
+                        </span>
+                        <span class="wd-topic">
+                            - 2h
+                        </span>
+                        <div class="wd-topic">
+                            123k Tuits
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <img src="images/nodejs.jpg" class="wd-rounded-image"/>
+                    </div>
                 </div>
             </div>
 
-            <div class="wd-box">
-                <div class="wd-topic">
-                    Trending in United States
-                </div>
-                <div class="wd-title">
-                    Wonderbread
-                </div>
-                <div class="wd-topic">
-                    1,259 Tuits
-                </div>
-            </div></br>
 
+
+
+            <div class="col-3 d-none d-lg-block">
+                <div class="wd-box-follow wd-title row ps-1 me-1">
+                    Who to follow
+                </div>
+                <div class="wd-box-follow row me-1">
+                    <div class="col-2">
+                        <image src="images/java.jpg" class="wd-profile-picture position-relative"/>
+                    </div>
+                    <div class="col-6 col-xl-7">
+                        <span>Java <i class="fa fa-check-circle"></i></span></br>
+                        @java
+                    </div>
+                    <div class="col-2 align-self-center">
+                        <button class="btn btn-primary override-bs">
+                            Follow
+                        </button>
+                    </div>
+                </div>
+                <div class="wd-box-follow row me-1">
+                    <div class="col-2">
+                        <image src="images/relativityspace.jpg" class="wd-profile-picture"/>
+                    </div>
+                    <div class="col-6 col-xl-7">
+                        <span>Relativity Space <i class="fa fa-check-circle"></i></span></br>
+                        @relativityspace
+                    </div>
+                    <div class="col-2 align-self-center">
+                        <button class="btn btn-primary override-bs">
+                            Follow
+                        </button>
+                    </div>
+                </div>
+                <div class="wd-box-follow row me-1">
+                    <div class="col-2">
+                        <image src="images/virgingalactic.svg" class="wd-profile-picture"/>
+                    </div>
+                    <div class="col-6 col-xl-7">
+                        <span>Virgin Galactic <i class="fa fa-check-circle"></i></span></br>
+                        @virgingalactic
+                    </div>
+                    <div class="col-2 align-self-center">
+                        <button class="btn btn-primary override-bs">
+                            Follow
+                        </button>
+                    </div>
+                </div>
+                <div class="wd-box-follow row me-1">
+                    <div class="col-2">
+                        <image src="images/nasa.png" class="wd-profile-picture"/>
+                    </div>
+                    <div class="col-6 col-xl-7">
+                        <span>Nasa <i class="fa fa-check-circle"></i></span></br>
+                        @nasa
+                    </div>
+                    <div class="col-2 align-self-center">
+                        <button class="btn btn-primary override-bs">
+                            Follow
+                        </button>
+                    </div>
+                </div>
+                <div class="wd-box-follow row me-1">
+                    <div class="col-2">
+                        <image src="images/tesla.png" class="wd-profile-picture"/>
+                    </div>
+                    <div class="col-6 col-xl-7">
+                        <span>Tesla <i class="fa fa-check-circle"></i></span></br>
+                        @telsa
+                    </div>
+                    <div class="col-2 align-self-center">
+                        <button class="btn btn-primary override-bs">
+                            Follow
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
