@@ -1,0 +1,74 @@
+.wd-profile-picture {
+    border-radius: 50px;
+    height: 48px;
+    width: 48px;
+}
+
+.wd-search-input {
+    border-radius: 50px;
+    border-style:solid;
+    border-color: #3A3B3C;
+    font-size: 14px;
+    padding-left: 40px;
+    width: 85%;
+    height: 40px;
+}
+
+.wd-settings-link {
+    text-decoration:none;
+    color: dodgerblue;
+}
+
+.wd-settings {
+    margin-right: 12px;
+    float: right;
+    font-size: 30px;
+}
+
+.wd-box {
+    border-style:solid;
+    border-color: lightgray;
+    border-width: 1px;
+    padding: 5px;
+}
+
+.wd-topic {
+    font-size: 13px;
+    color: rgb(110, 118, 125);
+}
+
+.wd-title {
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.wd-rounded-image {
+    height: 100px;
+    width: 100px;
+    border-radius: 25px;
+}
+
+.wd-box-follow {
+    border-style:solid;
+    border-color: lightgray;
+    border-width: 1px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.btn-primary.override-bs {
+    border-radius: 25px;
+}
+
+.card-img-overlay {
+    top: auto;
+}
+
+.wd-card-footer {
+    color:white;
+    font-weight: bold;
+    font-size: 40px;
+}
