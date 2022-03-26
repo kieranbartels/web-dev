@@ -1,0 +1,26 @@
+.wd-search-input {
+    border-radius: 50px;
+    border-style:solid;
+    border-color: #3A3B3C;
+    font-size: 14px;
+    padding-left: 40px;
+    width: 85%;
+    height: 40px;
+}
+.wd-settings-link {
+    text-decoration:none;
+    color: dodgerblue;
+}
+.wd-settings {
+    margin-right: 12px;
+    float: right;
+    font-size: 30px;
+}
+.card-img-overlay {
+    top: auto;
+}
+.wd-card-footer {
+    color:white;
+    font-weight: bold;
+    font-size: 40px;
+}

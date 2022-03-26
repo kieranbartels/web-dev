@@ -1,0 +1,22 @@
+.wd-box {
+    border-style:solid;
+    background-color: #222222;
+    border-color: rgb(47, 51, 54);
+    border-width: 1px;
+    padding: 5px;
+}
+.wd-topic {
+    font-size: 13px;
+    color: rgb(110, 118, 125);
+}
+.wd-title {
+    font-weight: bold;
+    font-size: 15px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.wd-rounded-image {
+    height: 100px;
+    width: 100px;
+    border-radius: 25px;
+}
