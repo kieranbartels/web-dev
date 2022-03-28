@@ -1,0 +1,14 @@
+.wd-text-box {
+    border-style:solid;
+    background-color: #222222;
+    border-color: rgb(47, 51, 54);
+}
+.wd-avatar-image {
+    border-radius: 50px;
+    height: 48px;
+    width: 48px;
+}
+
+.wd-icons {
+    color: #2a9fd6;
+}

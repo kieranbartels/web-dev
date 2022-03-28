@@ -1,0 +1,38 @@
+.wd-box {
+    border-style:solid;
+    background-color: #222222;
+    border-color: rgb(47, 51, 54);
+    border-width: 1px;
+    padding: 5px;
+}
+.wd-topic {
+    font-size: 13px;
+    color: rgb(110, 118, 125);
+}
+.wd-title {
+    font-color: white;
+    font-weight: bold;
+    font-size: 15px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.wd-username {
+    font-color: rgb(110, 118, 125);
+}
+.wd-tuit {
+    font-color: white;
+}
+.wd-avatar-image {
+    border-radius: 50px;
+    height: 48px;
+    width: 48px;
+}
+.wd-video {
+    border-radius: 25px;
+}
+
+.wd-picture {
+    width: 560px;
+    height: 315px;
+    border-radius: 25px;
+}

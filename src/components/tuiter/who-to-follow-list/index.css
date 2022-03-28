@@ -15,3 +15,8 @@
 .btn-primary.override-bs {
     border-radius: 25px;
 }
+.wd-follow {
+    color:white;
+    font-weight: bold;
+    font-size: 20px;
+}
