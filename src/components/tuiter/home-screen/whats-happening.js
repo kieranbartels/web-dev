@@ -14,25 +14,29 @@ const WhatsHappening = () => {
     }
     return (
         <>
-            <span>
+            <div className="d-flex flex-row justify-content-around">
                 <img src="../../../images/elmo.jpg" className="wd-avatar-image"/>
-                <textarea value={whatsHappening}
-                          onChange={(event) =>
-                              setWhatsHappening(event.target.value)}
-                          className="wd-text-box col-11">
+                <textarea
+                    className="wd-text-box col-11"
+                    placeholder="What's happening?"
+                    value={whatsHappening}
+                    onChange={(event) =>
+                        setWhatsHappening(event.target.value)}>
                 </textarea>
-            </span>
+            </div><br/>
 
-            <span className='wd-icons'>
-                <i className="fas fa-image pe-2"></i>
-                <i className="fas fa-chart-line pe-2"></i>
-                <i className="fas fa-smile pe-2"></i>
-                <i className="fas fa-calendar"></i>
-            </span>
+            <div className="d-flex justify-content-between">
+                <span className='wd-icons'>
+                    <i className="fas fa-image pe-2"></i>
+                    <i className="fas fa-chart-line pe-2"></i>
+                    <i className="fas fa-smile pe-2"></i>
+                    <i className="fas fa-calendar"></i>
+                </span>
 
-            <button onClick={tuitClickHandler} className="btn btn-primary btn-block rounded-pill">
-                Tuit
-            </button>
+                <button onClick={tuitClickHandler} className="btn btn-block btn-primary rounded-pill">
+                    Tuit
+                </button>
+            </div><br/>
         </>
     );
 }

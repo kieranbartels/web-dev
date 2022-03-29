@@ -1,5 +1,6 @@
 import './index.css';
 import {useDispatch} from "react-redux";
+import TuitStats from "./tuit-stats.js";
 
 const TuitListItem = (
     {
@@ -7,7 +8,7 @@ const TuitListItem = (
             _id: "123",
             topic: "Web Development",
             postedBy: {
-                "username": "ReactJS"
+                username: "ReactJS"
             },
             liked: true,
             verified: false,
@@ -31,9 +32,6 @@ const TuitListItem = (
     const deleteTuit = (tuit) => {
         dispatch({type: 'delete-tuit', tuit})
     };
-    const likeTuit = () => {
-        dispatch({type: 'like-tuit', tuit});
-    };
     return(
         <div className="wd-box row">
             <div className="col-1">
@@ -42,10 +40,9 @@ const TuitListItem = (
             <div className="col-8 col-sm-9 col-xl-10">
                 <span>
                     <span className="wd-topic mr-2">
-                    {tuit.topic}
+                        {tuit.postedBy.username}
                     </span>
                     <span className="wd-username">
-                        {tuit.userName}
                         {tuit.verified ?
                             <i className="fa fa-check-circle"></i> : ''
                         }&nbsp;
@@ -57,7 +54,7 @@ const TuitListItem = (
                 </div>
                 {tuit.attachments ?
                     (tuit.attachments.video ?
-                            <iframe width="560" height="315" src={"https://www.youtube.com/embed/" + tuit.attachments.video}
+                            <iframe width="500" height="295" src={"https://www.youtube.com/embed/" + tuit.attachments.video}
                                     title="YouTube video player" frameBorder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen
@@ -69,29 +66,7 @@ const TuitListItem = (
                     )
                 : ''}
                 <span className="d-flex flex-row justify-content-between align-items-end">
-                    <span>
-                        <i className="fa fa-comment"></i>
-                        {tuit.stats.comments}
-                    </span>
-                    <span>
-                        <i className="fa fa-retweet"></i>
-                        {tuit.stats.retuits}
-                    </span>
-
-                    <span onClick={likeTuit}>
-                        {
-                            tuit.liked &&
-                            <i className="fas fa-heart me-1"
-                               style={{color: 'red'}}>
-                            </i>
-                        }
-                        {
-                            !tuit.liked &&
-                            <i className="far fa-heart me-1"></i>
-                        }
-                        {tuit.stats && tuit.stats.likes}
-                    </span>
-                    <i className="fas fa-share-square"></i>
+                    <TuitStats tuit={tuit}/>
                 </span>
             </div>
             <div className="col-1">

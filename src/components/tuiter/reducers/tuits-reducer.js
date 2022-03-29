@@ -8,21 +8,23 @@ const tuitsReducer =
                     tuit: action.tuit,
                     _id: (new Date()).getTime() + '',
                     postedBy: {
-                        "username": "ReactJS"
+                        username: "Elmo"
                     },
+                    handle: "elmo",
+                    "avatar-image": "../../../images/elmo.jpg",
                     stats: {
+                        comments: 333,
                         retuits: 111,
-                        likes: 222,
-                        replies: 333
+                        likes: 222
                     }
                 }
-            case 'delete-tuit':
-                return state.filter(
-                    tuit => tuit._id !== action.tuit._id);
                 return [
                     newTuit,
                     ...state,
                 ];
+            case 'delete-tuit':
+                return state.filter(
+                    tuit => tuit._id !== action.tuit._id);
             case 'like-tuit':
                 return state.map(tuit => {
                     if(tuit._id === action.tuit._id) {

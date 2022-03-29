@@ -2,6 +2,7 @@
     border-style:solid;
     background-color: #222222;
     border-color: rgb(47, 51, 54);
+    color: white;
 }
 .wd-avatar-image {
     border-radius: 50px;
@@ -11,4 +12,5 @@
 
 .wd-icons {
     color: #2a9fd6;
+    margin-left: 55px;
 }
