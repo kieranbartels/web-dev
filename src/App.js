@@ -27,7 +27,7 @@ function App() {
                                    element={<HomeScreen/>}/>
                             <Route path="home" exact={true}
                                    element={<HomeScreen/>} />
-                            <Route path="tuiter/explore"
+                            <Route path="explore"
                                    element={<ExploreScreen/>}/>
                         </Route>
                     </Route>
