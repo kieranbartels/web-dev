@@ -1,0 +1,32 @@
+.wd-box {
+    border-style:solid;
+    background-color: #222222;
+    border-color: rgb(47, 51, 54);
+    border-width: 1px;
+    padding: 5px;
+}
+.wd-topic {
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+}
+.wd-username {
+    color: rgb(110, 118, 125);
+}
+.wd-tuit {
+    font-color: white;
+}
+.wd-avatar-image {
+    border-radius: 50px;
+    height: 48px;
+    width: 48px;
+}
+.wd-video {
+    border-radius: 25px;
+}
+
+.wd-picture {
+    width: 500px;
+    height: 295px;
+    border-radius: 25px;
+}
