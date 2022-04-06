@@ -1,6 +1,8 @@
 import './index.css';
 import {useDispatch} from "react-redux";
 import TuitStats from "./tuit-stats.js";
+import {deleteTuit}
+    from "../../../actions/tuits-actions";
 
 const TuitListItem = (
     {
@@ -29,9 +31,6 @@ const TuitListItem = (
         }
     }) => {
     const dispatch = useDispatch();
-    const deleteTuit = (tuit) => {
-        dispatch({type: 'delete-tuit', tuit})
-    };
     return(
         <div className="wd-box row">
             <div className="col-1">
@@ -70,9 +69,10 @@ const TuitListItem = (
                 </span>
             </div>
             <div className="col-1">
-                <i onClick={() =>
-                    deleteTuit(tuit)}
-                   className="fa fa-xmark fa-2x">
+                <i className="fa fa-xmark fa-2x float-end"
+                   onClick={() => deleteTuit(
+                       dispatch, tuit)}>
+
                 </i>
             </div>
         </div>

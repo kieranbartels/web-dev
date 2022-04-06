@@ -1,34 +1,52 @@
 import {useDispatch} from "react-redux";
+import React from "react";
+import {updateTuit} from "../../../actions/tuits-actions";
 
 const TuitStats = ({tuit}) => {
     const dispatch = useDispatch();
-    const likeTuit = () => {
-        dispatch({type: 'like-tuit', tuit});
-    };
     return (
         <>
             <span>
                 <i className="fa fa-comment"></i>
-                {tuit.stats.comments}
+                {tuit.comments}
             </span>
             <span>
                 <i className="fa fa-retweet"></i>
-                {tuit.stats.retuits}
+                {tuit.retuits}
             </span>
 
-            <span onClick={likeTuit}>
-                        {
-                            tuit.liked &&
-                            <i className="fas fa-heart me-1"
-                               style={{color: 'red'}}>
-                            </i>
-                        }
+            <span onClick={() => updateTuit(dispatch, {
+                ...tuit,
+                liked: !tuit.liked,
+                likes: tuit.liked ? tuit.likes - 1 : tuit.likes + 1
+            })}>
+                {
+                    tuit.liked &&
+                    <i className="fas fa-thumbs-up me-1"/>
+                }
                 {
                     !tuit.liked &&
-                    <i className="far fa-heart me-1"></i>
+                    <i className="far fa-thumbs-up me-1"/>
                 }
-                {tuit.stats && tuit.stats.likes}
+                {tuit.likes}
             </span>
+
+            <span onClick={() => updateTuit(dispatch, {
+                ...tuit,
+                disliked: !tuit.disliked,
+                dislikes: tuit.disliked ? tuit.dislikes - 1 : tuit.dislikes + 1
+            })}>
+                {
+                    tuit.disliked &&
+                    <i className="fas fa-thumbs-down me-1"/>
+                }
+                {
+                    !tuit.disliked &&
+                    <i className="far fa-thumbs-down me-1"/>
+                }
+                {tuit.dislikes}
+            </span>
+
             <i className="fas fa-share-square"></i>
         </>
     )
