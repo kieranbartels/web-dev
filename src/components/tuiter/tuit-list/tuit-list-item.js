@@ -23,11 +23,9 @@ const TuitListItem = (
             },
             "logo-image": "../../../images/react-blue.png",
             "avatar-image": "../../../images/react-blue.png",
-            stats: {
-                comments: 123,
-                retuits: 234,
-                likes: 345
-            }
+            comments: 123,
+            retuits: 234,
+            likes: 345
         }
     }) => {
     const dispatch = useDispatch();

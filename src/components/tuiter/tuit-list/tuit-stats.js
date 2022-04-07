@@ -7,11 +7,11 @@ const TuitStats = ({tuit}) => {
     return (
         <>
             <span>
-                <i className="fa fa-comment"></i>
+                <i className="fa fa-comment me-1"></i>
                 {tuit.comments}
             </span>
             <span>
-                <i className="fa fa-retweet"></i>
+                <i className="fa fa-retweet me-1"></i>
                 {tuit.retuits}
             </span>
 
