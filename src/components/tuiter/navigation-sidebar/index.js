@@ -17,15 +17,15 @@ const NavigationSidebar = (
                 </a>
 
                 <a className={`list-group-item
-                    ${active === 'explore' ? 'active' : ''}`} href="tuiter/explore">
+                    ${active === 'explore' ? 'active' : ''}`} href="../tuiter/explore">
                     <span className="fa fa-hashtag"></span>
                     <span className="d-none d-xl-inline"> Explore</span>
                 </a>
 
                 <a className={`list-group-item
-                    ${active === 'notifications' ? 'active' : ''}`} href="notifications.html">
-                    <span className="fa fa-bell"></span>
-                    <span className="d-none d-xl-inline"> Notifications</span></a>
+                    ${active === 'weather' ? 'active' : ''}`} href="../tuiter/weather">
+                    <span className="fa fa-cloud"></span>
+                    <span className="d-none d-xl-inline"> Weather</span></a>
 
                 <a className={`list-group-item
                     ${active === 'messages' ? 'active' : ''}`} href="messages.html">
@@ -43,7 +43,7 @@ const NavigationSidebar = (
                     <span className="d-none d-xl-inline"> Lists</span></a>
 
                 <a className={`list-group-item
-                    ${active === 'profile' ? 'active' : ''}`} href="profile.html">
+                    ${active === 'profile' ? 'active' : ''}`} href="../tuiter/profile">
                     <span className="fa fa-user"></span>
                     <span className="d-none d-xl-inline"> Profile</span></a>
 

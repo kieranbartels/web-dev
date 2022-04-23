@@ -1,5 +1,6 @@
 import {Outlet} from "react-router-dom";
-import NavigationSidebar from "./navigation-sidebar";
+import NavigationSidebar
+    from "./navigation-sidebar";
 import WhoToFollowList
     from "./who-to-follow-list";
 
