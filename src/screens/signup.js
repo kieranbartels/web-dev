@@ -1,25 +1,34 @@
 import React, {useRef} from 'react';
-import axios from "axios";
 import './index.css';
 import {useNavigate} from "react-router-dom";
 import {useProfile} from "../contexts/profile-context";
 
-const api = axios.create({withCredentials: true})
-
 const Signup = () => {
+    const firstNameRef = useRef()
+    const lastNameRef = useRef()
+    const handleRef = useRef()
     const emailRef = useRef()
     const passwordRef = useRef()
+    const date = new Date().toLocaleString('en', {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric',
+    });
     const navigate = useNavigate()
     const {signup} = useProfile()
     const handleSignupBtn = async () => {
         try {
             await signup(
+                firstNameRef.current.value,
+                lastNameRef.current.value,
+                handleRef.current.value,
                 emailRef.current.value,
-                passwordRef.current.value
+                passwordRef.current.value,
+                date
             )
             navigate('../tuiter/profile')
         } catch(e) {
-            alert('oops')
+            alert('Email already taken.')
         }
     }
     return (
@@ -37,16 +46,22 @@ const Signup = () => {
                                     <div className="row">
                                         <div className="col-md-6 mb-4">
                                             <div className="form-outline">
-                                                <input type="text" className="form-control"/>
+                                                <input ref={firstNameRef} type="text" className="form-control"/>
                                                 <label className="form-label">First name</label>
                                             </div>
                                         </div>
                                         <div className="col-md-6 mb-4">
                                             <div className="form-outline">
-                                                <input type="text" className="form-control"/>
+                                                <input ref={lastNameRef} type="text" className="form-control"/>
                                                 <label className="form-label">Last name</label>
                                             </div>
                                         </div>
+                                    </div>
+
+                                    <div className="form-outline mb-4">
+                                        <input ref={handleRef} type="text"
+                                               className="form-control form-control-lg"/>
+                                        <label className="form-label">@Handle</label>
                                     </div>
 
                                     <div className="form-outline mb-4">

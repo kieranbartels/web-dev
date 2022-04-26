@@ -5,9 +5,10 @@ import './vendors/fontawesome/css/all.css';
 
 import Tuiter from "./components/tuiter";
 import ExploreScreen from "./components/tuiter/explore-screen";
-import HomeScreen from "./components/tuiter/home-screen";
+import HomeScreen from "./components/tuiter/home-screen/home-screen";
 import WeatherScreen from "./components/tuiter/weather-screen";
 import Profile from "./screens/profile";
+import EditProfile from "./screens/edit-profile";
 import Signup from "./screens/signup";
 import Signin from "./screens/signin";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
@@ -36,9 +37,14 @@ function App() {
                                        element={<WeatherScreen/>}/>
                                 <Route path="profile"
                                        element={
-                                    <SecureRoute>
-                                        <Profile/>
-                                    </SecureRoute>}/>
+                                           <SecureRoute>
+                                               <Profile/>
+                                           </SecureRoute>}/>
+                                <Route path="edit-profile"
+                                       element={
+                                   <SecureRoute>
+                                       <EditProfile/>
+                                   </SecureRoute>}/>
                             </Route>
                         </Route>
                     </Routes>

@@ -1,17 +1,13 @@
 import React, {useRef} from 'react';
-import axios from "axios";
-import {Link, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {useProfile} from "../contexts/profile-context";
-
-const api = axios.create({
-    withCredentials: true
-});
 
 const Signin = () => {
     const emailRef = useRef()
     const passwordRef = useRef()
     const navigate = useNavigate()
     const {signin} = useProfile()
+
     const handleSigninBtn = async () => {
         try {
             await signin(
@@ -20,7 +16,7 @@ const Signin = () => {
             )
             navigate('../tuiter/profile')
         } catch (e) {
-            alert('oopsy')
+            alert('Incorrect email or password.')
         }
     }
     return (

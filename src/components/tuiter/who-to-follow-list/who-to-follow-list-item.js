@@ -4,7 +4,6 @@ const WhoToFollowListItem = (
     {
         who = {
             avatarIcon: '/images/virgingalactic.svg',
-            userName: 'Virgin Galactic',
             handle: 'virgingalactic',
         }
     }) => {

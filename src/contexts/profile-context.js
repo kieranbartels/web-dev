@@ -26,11 +26,20 @@ export const ProfileProvider = ({children}) => {
         }
     }
 
-    const signup = async (email, password) => {
+    const signup = async (firstName, lastName, handle, email, password, date) => {
         try { // TODO: move this to service
             const response = await api
                 .post("http://localhost:4000/api/signup",
-                    { email, password })
+                    { email, password, firstName, lastName, handle, date})
+            setProfile(response.data)
+        } catch (e) { throw e }
+    }
+
+    const updateUser = async (id, firstName, lastName, handle, email, password, date) => {
+        try { // TODO: move this to service
+            const response = await api
+                .put(`http://localhost:4000/api/users/${id}`,
+                    {id, firstName, lastName, handle, email, password, date})
             setProfile(response.data)
         } catch (e) { throw e }
     }
@@ -47,7 +56,7 @@ export const ProfileProvider = ({children}) => {
         }
     }
 
-    const value = {signout, signin, profile, signup, checkLoggedIn}
+    const value = {signout, signin, profile, signup, checkLoggedIn, updateUser}
     return(
         <ProfileContext.Provider value={value}>
             {children}

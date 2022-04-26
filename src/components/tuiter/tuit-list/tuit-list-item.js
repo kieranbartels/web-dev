@@ -9,9 +9,6 @@ const TuitListItem = (
         tuit = {
             _id: "123",
             topic: "Web Development",
-            postedBy: {
-                username: "ReactJS"
-            },
             liked: true,
             verified: false,
             handle: "ReactJS",
@@ -37,7 +34,7 @@ const TuitListItem = (
             <div className="col-8 col-sm-9 col-xl-10">
                 <span>
                     <span className="wd-topic mr-2">
-                        {tuit.postedBy.username}
+                        {tuit.firstName} {tuit.lastName}
                     </span>
                     <span className="wd-username">
                         {tuit.verified ?

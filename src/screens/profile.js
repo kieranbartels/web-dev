@@ -1,60 +1,28 @@
-import React, {useEffect, useState} from 'react';
-import axios from "axios";
-import {Link, useNavigate} from "react-router-dom";
 import {useProfile} from "../contexts/profile-context";
-
-const api = axios.create({
-    withCredentials: true
-});
+import {useNavigate} from "react-router-dom";
+import React from "react";
 
 const Profile = () => {
-    //const[currentUser, setCurrentUser] = useState({})
     const navigate = useNavigate()
     const {profile} = useProfile()
-    // const fetchCurrentUser = async () => {
-    //     try {
-    //         const response = await api.post("http://localhost:4000/api/profile")
-    //         setCurrentUser(response.data)
-    //     } catch(e) {
-    //         navigate('/')
-    //     }
-    // }
-    // useEffect(() => {
-    //     fetchCurrentUser()
-    // }, [])
-
-    // const {profile, signout} = useProfile()
-    //
-    // const logout = async () => {
-    //     try {
-    //         await signout()
-    //     } catch (e) {
-    //
-    //     }
-    //     navigate('/signin')
-    // }
+    const editUser = async () => {
+        navigate('../edit-profile')
+    }
 
     return (
-        <div className="container mt-4 mb-4 p-3 d-flex justify-content-center">
+        <div className="container mb-4 d-flex justify-content-center">
             <div className="card p-4">
                 <div className=" image d-flex flex-column justify-content-center align-items-center">
                     <button className="btn btn-secondary"><img src="https://i.imgur.com/wvxPV9S.png" height="100"
                                                                width="100"/></button>
-                    <span className="name mt-3">Eleanor Pena</span> <span className="idd">@eleanorpena</span>
-                    <div className="d-flex flex-row justify-content-center align-items-center gap-2"><span
-                        className="idd1">Oxc4c16a645_b21a</span> <span><i className="fa fa-copy"></i></span></div>
-                    <div className="d-flex flex-row justify-content-center align-items-center mt-3"><span
-                        className="number">1069 <span className="follow">Followers</span></span></div>
+                    <span className="name mt-3"> {profile.firstName} {profile.lastName}</span>
+                    <span className="name">@{profile.handle}</span>
+                    <span className="idd">{profile.email}</span>
                     <div className=" d-flex mt-2">
-                        <button className="btn1 btn-dark">Edit Profile</button>
+                        <button onClick={editUser} className="btn1 btn-dark">Edit Profile</button>
                     </div>
-                    <div className="text mt-3">
-                        <span>Eleanor Pena is a creator of minimalistic x bold graphics and digital artwork.</span>
-                    </div>
-                    <div className="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center"><span><i
-                        className="fa fa-twitter"></i></span> <span><i className="fa fa-facebook-f"></i></span> <span><i
-                        className="fa fa-instagram"></i></span> <span><i className="fa fa-linkedin"></i></span></div>
-                    <div className=" px-2 rounded mt-4 date "><span className="join">Joined May,2021</span></div>
+                    <div className="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center"></div>
+                    <div className=" px-2 rounded mt-4"><span className="join">Joined {profile.date}</span></div>
                 </div>
             </div>
         </div>
