@@ -59,3 +59,15 @@ hr .new1 {
 .date {
     background-color: #ccc
 }
+
+.profile-picture {
+    border-radius: 50px;
+}
+
+.wd-box {
+    border-style:solid;
+    background-color: #222222;
+    border-color: rgb(47, 51, 54);
+    border-width: 1px;
+    padding: 5px;
+}

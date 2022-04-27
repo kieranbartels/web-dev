@@ -11,6 +11,7 @@ import Profile from "./screens/profile";
 import EditProfile from "./screens/edit-profile";
 import Signup from "./screens/signup";
 import Signin from "./screens/signin";
+import Admin from "./screens/admin";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {ProfileProvider} from "./contexts/profile-context";
 import SecureRoute from "./components/secure-route";
@@ -28,9 +29,15 @@ function App() {
                             <Route path="tuiter"
                                    element={<Tuiter/>}>
                                 <Route index
-                                       element={<HomeScreen/>}/>
+                                       element={
+                                        <SecureRoute>
+                                           <HomeScreen/>
+                                       </SecureRoute>}/>
                                 <Route path="home" exact={true}
-                                       element={<HomeScreen/>} />
+                                       element={
+                                            <SecureRoute>
+                                                <HomeScreen/>
+                                            </SecureRoute>}/>
                                 <Route path="explore"
                                        element={<ExploreScreen/>}/>
                                 <Route path="weather"
@@ -45,6 +52,11 @@ function App() {
                                    <SecureRoute>
                                        <EditProfile/>
                                    </SecureRoute>}/>
+                                <Route path="admin"
+                                       element={
+                                           <SecureRoute>
+                                               <Admin/>
+                                           </SecureRoute>}/>
                             </Route>
                         </Route>
                     </Routes>

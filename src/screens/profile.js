@@ -11,10 +11,9 @@ const Profile = () => {
 
     return (
         <div className="container mb-4 d-flex justify-content-center">
-            <div className="card p-4">
+            <div className="card p-5">
                 <div className=" image d-flex flex-column justify-content-center align-items-center">
-                    <button className="btn btn-secondary"><img src="https://i.imgur.com/wvxPV9S.png" height="100"
-                                                               width="100"/></button>
+                    <img className="profile-picture" src={profile.avatarImage} height="100" width="100"/>
                     <span className="name mt-3"> {profile.firstName} {profile.lastName}</span>
                     <span className="name">@{profile.handle}</span>
                     <span className="idd">{profile.email}</span>

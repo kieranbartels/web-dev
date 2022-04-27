@@ -1,9 +1,12 @@
 import React from "react";
+import {useProfile} from "../../../contexts/profile-context";
 
 const NavigationSidebar = (
     {
         active = 'tuiter'
     }) => {
+    const {profile} = useProfile()
+
     return(
         <>
             <div className="list-group">
@@ -13,7 +16,7 @@ const NavigationSidebar = (
                 <a className={`list-group-item
                     ${active === 'tuiter' ? 'active' : ''}`} href="../tuiter">
                     <span className="fa fa-home"></span>
-                    <span className="d-none d-xl-inline"> Home</span>
+                    <span className="d-none d-xl-inline"> Home </span>
                 </a>
 
                 <a className={`list-group-item
@@ -25,22 +28,14 @@ const NavigationSidebar = (
                 <a className={`list-group-item
                     ${active === 'weather' ? 'active' : ''}`} href="../tuiter/weather">
                     <span className="fa fa-cloud"></span>
-                    <span className="d-none d-xl-inline"> Weather</span></a>
+                    <span className="d-none d-xl-inline"> Weather {profile.role}</span></a>
 
-                <a className={`list-group-item
-                    ${active === 'messages' ? 'active' : ''}`} href="messages.html">
-                    <span className="fa fa-envelope"></span>
-                    <span className="d-none d-xl-inline"> Messages</span></a>
-
-                <a className={`list-group-item
-                    ${active === 'bookmarks' ? 'active' : ''}`} href="bookmarks.html">
-                    <span className="fa fa-bookmark"></span>
-                    <span className="d-none d-xl-inline"> Bookmarks</span></a>
-
-                <a className={`list-group-item
-                    ${active === 'lists' ? 'active' : ''}`} href="lists.html">
-                    <span className="fa fa-list"></span>
-                    <span className="d-none d-xl-inline"> Lists</span></a>
+                { profile.role=="ADMIN" &&
+                    <a className={`list-group-item
+                            ${active === 'admin' ? 'active' : ''}`} href="../tuiter/admin">
+                        <span className="fa fa-list"></span>
+                        <span className="d-none d-xl-inline"> Admin</span></a>
+                }
 
                 <a className={`list-group-item
                     ${active === 'profile' ? 'active' : ''}`} href="../tuiter/profile">

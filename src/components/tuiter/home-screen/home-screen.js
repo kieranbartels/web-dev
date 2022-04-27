@@ -10,7 +10,6 @@ const HomeScreen = () => {
     return(
         <div>
             <WhatsHappening/>
-            {profile.email} hello
             <TuitList/>
         </div>
     )

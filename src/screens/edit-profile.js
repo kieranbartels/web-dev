@@ -19,7 +19,8 @@ const EditProfile = () => {
                 handleRef.current.value,
                 emailRef.current.value,
                 profile.password,
-                profile.date
+                profile.date,
+                profile.avatarImage
             )
             navigate('../profile')
 
@@ -29,8 +30,7 @@ const EditProfile = () => {
         <div className="container mb-4 d-flex justify-content-center">
             <div className="card p-4">
                 <div className=" image d-flex flex-column justify-content-center align-items-center">
-                    <button className="btn btn-secondary"><img src="https://i.imgur.com/wvxPV9S.png" height="100"
-                                                               width="100"/></button>
+                    <img className="profile-picture" src={profile.avatarImage} height="100" width="100"/>
                     <div className="row mt-4">
                         <div className="col-md-6 mb-4">
                             <div className="form-outline">

@@ -13,10 +13,16 @@ export const signin = async (email, password) => {
     return response.data
 }
 
-export const updateUser = async (id, firstName, lastName, handle, email, password, date) => {
+export const updateUser = async (id, firstName, lastName, handle, email, password, date, avatarImage, role) => {
     const response = await api.put(`${API_URL}/updateUser/${id}`,
-        {id, firstName, lastName, handle, email, password, date})
+        {id, firstName, lastName, handle, email, password, date, avatarImage, role})
+    response.data._id = id;
     return response.data
+}
+
+export const findAllUsers = async () => {
+    const response = await api.get(`http://localhost:4000/api/users`);
+    return response.data;
 }
 
 export const profile = async () => {

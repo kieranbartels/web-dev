@@ -35,13 +35,21 @@ export const ProfileProvider = ({children}) => {
         } catch (e) { throw e }
     }
 
-    const updateUser = async (id, firstName, lastName, handle, email, password, date) => {
+    const updateUser = async (id, firstName, lastName, handle, email, password, date, avatarImage, role) => {
         try { // TODO: move this to service
             const response = await api
                 .put(`http://localhost:4000/api/users/${id}`,
-                    {id, firstName, lastName, handle, email, password, date})
+                    {id, firstName, lastName, handle, email, password, date, avatarImage, role})
             response.data._id = id;
             setProfile(response.data)
+        } catch (e) { throw e }
+    }
+
+    const findAllUsers = async () => {
+        try {
+            const response = await api.get(`http://localhost:4000/api/users`);
+            const users = response.data;
+            return users;
         } catch (e) { throw e }
     }
 
@@ -57,7 +65,7 @@ export const ProfileProvider = ({children}) => {
         }
     }
 
-    const value = {signout, signin, profile, signup, checkLoggedIn, updateUser}
+    const value = {signout, signin, profile, signup, checkLoggedIn, updateUser, findAllUsers}
     return(
         <ProfileContext.Provider value={value}>
             {children}
