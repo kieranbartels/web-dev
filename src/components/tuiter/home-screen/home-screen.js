@@ -5,12 +5,12 @@ import WhatsHappening
 import {useProfile} from "../../../contexts/profile-context";
 
 const HomeScreen = () => {
-    const profile = useProfile();
+    const {profile} = useProfile();
 
     return(
         <div>
             <WhatsHappening/>
-            {profile.email}
+            {profile.email} hello
             <TuitList/>
         </div>
     )

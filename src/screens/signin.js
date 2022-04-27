@@ -1,12 +1,21 @@
 import React, {useRef} from 'react';
 import {useNavigate} from "react-router-dom";
 import {useProfile} from "../contexts/profile-context";
+import WhoToFollowList from "../components/tuiter/who-to-follow-list";
+import {combineReducers, createStore} from "redux";
+import tuitsReducer from "../components/tuiter/reducers/tuits-reducer";
+import whoReducer from "../components/tuiter/reducers/who-reducer";
+import {Provider} from "react-redux";
 
 const Signin = () => {
     const emailRef = useRef()
     const passwordRef = useRef()
     const navigate = useNavigate()
     const {signin} = useProfile()
+    const reducer = combineReducers({
+        tuits: tuitsReducer, who: whoReducer
+    });
+    const store = createStore(reducer);
 
     const handleSigninBtn = async () => {
         try {
@@ -20,10 +29,8 @@ const Signin = () => {
         }
     }
     return (
-        <section className="vh-100">
-            <div className="container py-5 h-100">
-                <div className="row d-flex justify-content-center align-items-center h-100">
-                    <div className="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div className="row d-flex justify-content-center align-items-center mt-5">
+            <div className="col-10 col-lg-7 col-xl-6">
                         <div className="card bg text-black">
                             <div className="card-body p-5 text-center">
                                 <div className="mb-md-5 mt-md-4 pb-5">
@@ -48,10 +55,14 @@ const Signin = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
             </div>
-        </section>
+
+            <Provider store={store}>
+                <div className="mw-6 d-none d-lg-block col-lg-4 col-xl-4">
+                    <WhoToFollowList/>
+                </div>
+            </Provider>
+        </div>
     );
 };
 

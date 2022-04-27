@@ -40,6 +40,7 @@ export const ProfileProvider = ({children}) => {
             const response = await api
                 .put(`http://localhost:4000/api/users/${id}`,
                     {id, firstName, lastName, handle, email, password, date})
+            response.data._id = id;
             setProfile(response.data)
         } catch (e) { throw e }
     }

@@ -7,7 +7,7 @@ const WhoToFollowList = () => {
     return (
         <>
             <ul className="list-group">
-                <div className="d-flex wd-box-follow wd-follow ps-2">Who To Follow</div>
+                <div className="d-flex wd-box-follow wd-follow ps-2">Trending Accounts</div>
                 {
                     who.map(who => {
                         return(
