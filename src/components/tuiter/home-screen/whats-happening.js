@@ -12,7 +12,6 @@ const WhatsHappening = () => {
     const dispatch = useDispatch();
     const [newTuit, setNewTuit] =
         useState({tuit: 'New tuit',
-            topic: "Web Development",
             liked: false,
             disliked: false,
             verified: false,
@@ -51,7 +50,7 @@ const WhatsHappening = () => {
                 {profile.firstName} lal
 
                 <button className="btn btn-block btn-primary rounded-pill" onClick={() =>
-                    console.log(profile.firstName)}>
+                    createTuit(dispatch, newTuit)}>
                     Tuit
                 </button>
             </div><br/>

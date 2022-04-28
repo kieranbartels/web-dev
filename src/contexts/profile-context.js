@@ -10,9 +10,13 @@ export const ProfileProvider = ({children}) => {
         = useState({})
 
     const signout = async () => {
-        const response = await api
-            .post("http://localhost:4000/api/signout")
-        setProfile(null)
+        try {
+            const response = await api
+                .post("http://localhost:4000/api/signout")
+            setProfile(null)
+        } catch (e) {
+            throw e
+        }
     }
 
     const checkLoggedIn = async () => {

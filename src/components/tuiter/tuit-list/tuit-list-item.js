@@ -4,27 +4,7 @@ import TuitStats from "./tuit-stats.js";
 import {deleteTuit}
     from "../../../actions/tuits-actions";
 
-const TuitListItem = (
-    {
-        tuit = {
-            _id: "123",
-            topic: "Web Development",
-            liked: true,
-            verified: false,
-            handle: "ReactJS",
-            time: "2h",
-            title: "React.js is a component based front end library that makes it very easy to build Single Page Applications or SPAs",
-            tuit: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-            attachments: {
-                video: "unKvMC3Y1kI"
-            },
-            "logo-image": "../../../images/react-blue.png",
-            "avatar-image": "../../../images/react-blue.png",
-            comments: 123,
-            retuits: 234,
-            likes: 345
-        }
-    }) => {
+const TuitListItem = ({tuit}) => {
     const dispatch = useDispatch();
     return(
         <div className="wd-box row">

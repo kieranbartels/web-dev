@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_URL = "http://localhost:4000/api"
+const API_URL = "http://localhost:4000/api/users"
 const api = axios.create({withCredentials: true})
 
 export const signup = async (email, password) => {
@@ -21,8 +21,9 @@ export const updateUser = async (id, firstName, lastName, handle, email, passwor
 }
 
 export const findAllUsers = async () => {
-    const response = await api.get(`http://localhost:4000/api/users`);
-    return response.data;
+    const response = await axios.get(`http://localhost:4000/api/users`);
+    const users = response.data;
+    return users;
 }
 
 export const profile = async () => {

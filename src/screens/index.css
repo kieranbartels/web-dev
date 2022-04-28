@@ -71,3 +71,9 @@ hr .new1 {
     border-width: 1px;
     padding: 5px;
 }
+
+.wd-avatar-image {
+    border-radius: 50px;
+    height: 48px;
+    width: 48px;
+}

@@ -28,7 +28,7 @@ const NavigationSidebar = (
                 <a className={`list-group-item
                     ${active === 'weather' ? 'active' : ''}`} href="../tuiter/weather">
                     <span className="fa fa-cloud"></span>
-                    <span className="d-none d-xl-inline"> Weather {profile.role}</span></a>
+                    <span className="d-none d-xl-inline"> Weather</span></a>
 
                 { profile.role=="ADMIN" &&
                     <a className={`list-group-item
