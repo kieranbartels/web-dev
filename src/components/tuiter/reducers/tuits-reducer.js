@@ -1,4 +1,4 @@
-import {UPDATE_TUIT, CREATE_TUIT, DELETE_TUIT, FIND_ALL_TUITS}
+import {UPDATE_TUIT, CREATE_TUIT, DELETE_TUIT, FIND_ALL_TUITS, FIND_ALL_USER_TUITS}
     from "../../../actions/tuits-actions";
 
 const tuitsReducer = (state = [], action) => {
@@ -16,6 +16,8 @@ const tuitsReducer = (state = [], action) => {
             return state.filter(
                 tuit => tuit._id !== action.tuit._id);
         case FIND_ALL_TUITS:
+            return action.tuits;
+        case FIND_ALL_USER_TUITS:
             return action.tuits;
         default:
             return state;

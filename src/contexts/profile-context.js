@@ -57,6 +57,13 @@ export const ProfileProvider = ({children}) => {
         } catch (e) { throw e }
     }
 
+    const findUserById = async (id) => {
+        try {
+            const response = await api.get(`http://localhost:4000/api/users/${id}`, {id});
+            const user = response.data;
+            return user;
+        } catch (e) { throw e }
+    }
 
     const signin = async (email, password) => {
         try {
@@ -69,7 +76,8 @@ export const ProfileProvider = ({children}) => {
         }
     }
 
-    const value = {signout, signin, profile, signup, checkLoggedIn, updateUser, findAllUsers}
+    const value = {signout, signin, profile, signup, checkLoggedIn, updateUser,
+        findAllUsers, findUserById}
     return(
         <ProfileContext.Provider value={value}>
             {children}

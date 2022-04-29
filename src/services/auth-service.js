@@ -26,7 +26,18 @@ export const findAllUsers = async () => {
     return users;
 }
 
+export const findUserByHandle = async (handle) => {
+    const response = await api.get(`http://localhost:4000/api/users/${handle}`)
+    const user = response.data;
+    return user;
+}
+
 export const profile = async () => {
     const response = await api.post(`${API_URL}/profile`)
+    return response.data
+}
+
+export const logout = async () => {
+    const response = await api.post(`http://localhost:4000/api/logout`)
     return response.data
 }

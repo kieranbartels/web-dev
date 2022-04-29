@@ -52,6 +52,9 @@ const Signin = () => {
 
                                     <button onClick={handleSigninBtn}
                                             className="btn btn-outline-light btn-lg px-5"> Sign In</button>
+                                    <a href="/signup">
+                                        <div className="mt-4 text-50 text-black"> Dont have an account? Signup here. </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -60,6 +63,11 @@ const Signin = () => {
             <Provider store={store}>
                 <div className="mw-6 d-none d-lg-block col-lg-4 col-xl-4">
                     <WhoToFollowList/>
+                    <div className="d-grid mt-2">
+                        <a href="/tuiter/explore"
+                           className="btn btn-primary btn-block rounded-pill">
+                            Explore</a>
+                    </div>
                 </div>
             </Provider>
         </div>

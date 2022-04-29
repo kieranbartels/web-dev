@@ -15,7 +15,6 @@ const UserList = () => {
         }
     }
     useEffect(() => { getUsers() }, [])
-    console.log(users)
 
     return (
         <div>

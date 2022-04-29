@@ -12,6 +12,7 @@ const WhatsHappening = () => {
     const dispatch = useDispatch();
     const [newTuit, setNewTuit] =
         useState({tuit: 'New tuit',
+            _user: profile._id,
             liked: false,
             disliked: false,
             verified: false,
@@ -19,7 +20,7 @@ const WhatsHappening = () => {
             firstName: profile.firstName,
             lastName: profile.lastName,
             email: profile.email,
-            "avatar-image": "../../../images/elmo.jpg",
+            "avatar-image": profile.avatarImage,
             likes: 0,
             dislikes: 0,
             comments: 0,
@@ -28,11 +29,12 @@ const WhatsHappening = () => {
     return (
         <>
             <div className="d-flex flex-row justify-content-around">
-                <img src="../../../images/elmo.jpg" className="wd-avatar-image"/>
+                <img src={profile.avatarImage} className="wd-avatar-image"/>
                 <textarea
                     className="wd-text-box col-11"
                     placeholder={"What's happening?"}
                     value={whatsHappening}
+                    id={"tuit-box"}
                     onChange={(e) => {
                         setWhatsHappening(e.target.value)
                         setNewTuit({...newTuit,
@@ -47,10 +49,9 @@ const WhatsHappening = () => {
                     <i className="fas fa-smile pe-2"></i>
                     <i className="fas fa-calendar"></i>
                 </span>
-                {profile.firstName} lal
 
-                <button className="btn btn-block btn-primary rounded-pill" onClick={() =>
-                    createTuit(dispatch, newTuit)}>
+                <button className="btn btn-block btn-primary rounded-pill"
+                        onClick={() => createTuit(dispatch, newTuit)}>
                     Tuit
                 </button>
             </div><br/>

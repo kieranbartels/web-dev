@@ -78,6 +78,9 @@ const Signup = () => {
 
                                     <button onClick={handleSignupBtn}
                                             className="btn btn-outline-light btn-lg px-5"> Sign Up</button>
+                                    <a href="/signin">
+                                        <div className="mt-4 text-50 text-black"> Already have an account? Sign-in here. </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>

@@ -1,57 +1,84 @@
 import React from "react";
 import {useProfile} from "../../../contexts/profile-context";
+import * as service from "../../../services/auth-service"
+import {useNavigate, useLocation} from "react-router-dom";
 
 const NavigationSidebar = (
     {
-        active = 'tuiter'
+        active = ''
     }) => {
     const {profile} = useProfile()
+    const navigate = useNavigate()
+    const {pathname} = useLocation();
+
+    const logout = async () => {
+        await service.logout()
+        navigate('/signin')
+    }
+    const login = async () => {
+        navigate('/signin')
+    }
 
     return(
         <>
             <div className="list-group">
-                <a className="list-group-item" href="/">
-                    <i className="fab fa-twitter"></i></a>
+                <a className={`list-group-item
+                   ${pathname === '/tuiter/tuits' ? 'active' : ''}`} href="/tuiter/tuits">
+                    <span className="fab fa-twitter"></span>
+                    <span className="d-none d-xl-inline"> Tuiter </span>
+                </a>
 
                 <a className={`list-group-item
-                    ${active === 'tuiter' ? 'active' : ''}`} href="../tuiter">
+                    ${pathname === '/tuiter/' ? 'active' : ''}`} href="/tuiter">
                     <span className="fa fa-home"></span>
                     <span className="d-none d-xl-inline"> Home </span>
                 </a>
 
                 <a className={`list-group-item
-                    ${active === 'explore' ? 'active' : ''}`} href="../tuiter/explore">
+                    ${pathname === '/tuiter/explore' ? 'active' : ''}`} href="/tuiter/explore">
                     <span className="fa fa-hashtag"></span>
                     <span className="d-none d-xl-inline"> Explore</span>
                 </a>
 
                 <a className={`list-group-item
-                    ${active === 'weather' ? 'active' : ''}`} href="../tuiter/weather">
+                    ${pathname === '/tuiter/weather' ? 'active' : ''}`} href="/tuiter/weather">
                     <span className="fa fa-cloud"></span>
                     <span className="d-none d-xl-inline"> Weather</span></a>
 
+                <a className={`list-group-item
+                    ${pathname === '/tuiter/profile' ? 'active' : ''}`} href="/tuiter/profile">
+                    <span className="fa fa-user"></span>
+                    <span className="d-none d-xl-inline"> Profile</span></a>
+
                 { profile.role=="ADMIN" &&
                     <a className={`list-group-item
-                            ${active === 'admin' ? 'active' : ''}`} href="../tuiter/admin">
+                            ${pathname === '/tuiter/admin' ? 'active' : ''}`} href="/tuiter/admin">
                         <span className="fa fa-list"></span>
                         <span className="d-none d-xl-inline"> Admin</span></a>
                 }
 
                 <a className={`list-group-item
-                    ${active === 'profile' ? 'active' : ''}`} href="../tuiter/profile">
-                    <span className="fa fa-user"></span>
-                    <span className="d-none d-xl-inline"> Profile</span></a>
-
-                <a className={`list-group-item
-                    ${active === 'more' ? 'active' : ''}`} href="more.html">
+                    ${pathname === '/tuiter/more' ? 'active' : ''}`} href="more.html">
                     <span className="fa fa-ellipsis-h"></span>
                     <span className="d-none d-xl-inline"> More</span></a>
 
-                <div className="d-grid mt-2">
-                    <a href="tweet.html"
-                       className="btn btn-primary btn-block rounded-pill">
-                        Tweet</a>
-                </div>  
+
+                {profile.email &&
+                    <div className="d-grid mt-2">
+                        <button className="btn btn-primary btn-block rounded-pill"
+                                onClick={logout}>
+                            Logout
+                        </button>
+                    </div>
+                }
+                {!profile.email &&
+                    <div className="d-grid mt-2">
+                        <button className="btn btn-primary btn-block rounded-pill"
+                                onClick={login}>
+                            Login
+                        </button>
+                    </div>
+                }
 
             </div>
         </>
