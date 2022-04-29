@@ -24,7 +24,11 @@ const FollowingListItem = ({id}) => {
                         <img src={user.avatarImage} className="wd-avatar-image"/>
                     </div>
                     <div className="col-8 col-sm-9 col-xl-10 mt-2">
-                        {user.firstName} {user.lastName}
+                        <a href={`/tuiter/profile/${user._id}`}>
+                            <span className="wd-topic mr-2">
+                                {user.firstName} {user.lastName}
+                            </span><br/>
+                        </a>
                     </div>
                 </div>
             }

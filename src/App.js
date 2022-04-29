@@ -38,7 +38,7 @@ function App() {
                                     <HomeScreen/>
                                 </SecureRoute>}/>
                                 <Route path="explore" element={<ExploreScreen/>}/>
-                                <Route path="weather" element={<WeatherScreen/>}/>
+                                <Route path="search" element={<WeatherScreen/>}/>
                                 <Route path="profile" element={<SecureRoute>
                                     <Profile/>
                                 </SecureRoute>}/>

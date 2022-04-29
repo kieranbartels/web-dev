@@ -16,7 +16,7 @@ const TuitList = () => {
     const {pathname} = useLocation();
     useEffect(() => {
             if (pathname === '/tuiter/' || pathname === '/tuiter/home') {
-                findAllUserTuits(dispatch, profile.handle)
+                findAllUserTuits(dispatch, profile._id)
             } else if(pathname === '/tuiter/tuits') {
                 findAllTuits(dispatch)
             }

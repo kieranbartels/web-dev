@@ -41,7 +41,7 @@ const NavigationSidebar = (
                 </a>
 
                 <a className={`list-group-item
-                    ${pathname === '/tuiter/weather' ? 'active' : ''}`} href="/tuiter/weather">
+                    ${pathname === '/tuiter/weather' ? 'active' : ''}`} href="/tuiter/search">
                     <span className="fa fa-cloud"></span>
                     <span className="d-none d-xl-inline"> Weather</span></a>
 

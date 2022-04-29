@@ -7,8 +7,8 @@ export const findAllTuits = async () => {
     return tuits;
 }
 
-export const findAllUserTuits = async (handle) => {
-    const response = await axios.get(`${TUITS_API}/${handle}`, handle);
+export const findAllUserTuits = async (id) => {
+    const response = await axios.get(`${TUITS_API}/${id}`, id);
     const tuits = response.data;
     return tuits;
 }
