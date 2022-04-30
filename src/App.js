@@ -7,6 +7,7 @@ import Tuiter from "./components/tuiter";
 import ExploreScreen from "./components/tuiter/explore-screen";
 import HomeScreen from "./components/tuiter/home-screen/home-screen";
 import WeatherScreen from "./components/tuiter/weather-screen";
+import SearchWeather from "./components/tuiter/weather-screen/search-weather.js";
 import UserInfo from "./components/tuiter/user-info";
 import Profile from "./screens/profile";
 import EditProfile from "./screens/edit-profile";
@@ -24,8 +25,8 @@ function App() {
                 <div className="container">
                     <Routes>
                         <Route path="/">
-                            <Route path="signin" element={<Signin/>}/>
-                            <Route path="signup" element={<Signup/>}/>
+                            <Route path="login" element={<Signin/>}/>
+                            <Route path="register" element={<Signup/>}/>
                             <Route index element={<HomeScreen/>}/>
                             <Route path="tuiter" element={<Tuiter/>}>
                                 <Route index element={<SecureRoute>
@@ -38,7 +39,9 @@ function App() {
                                     <HomeScreen/>
                                 </SecureRoute>}/>
                                 <Route path="explore" element={<ExploreScreen/>}/>
-                                <Route path="search" element={<WeatherScreen/>}/>
+                                <Route path="search" element={<SearchWeather/>}/>
+                                <Route path="search/:searchString" element={<SearchWeather/>}/>
+                                <Route path="search/details/:city/:state" element={<WeatherScreen/>}/>
                                 <Route path="profile" element={<SecureRoute>
                                     <Profile/>
                                 </SecureRoute>}/>

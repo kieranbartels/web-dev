@@ -52,7 +52,7 @@ const Signin = () => {
 
                                     <button onClick={handleSigninBtn}
                                             className="btn btn-outline-light btn-lg px-5"> Sign In</button>
-                                    <a href="/signup">
+                                    <a href="/register">
                                         <div className="mt-4 text-50 text-black"> Dont have an account? Signup here. </div>
                                     </a>
                                 </div>

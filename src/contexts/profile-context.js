@@ -30,11 +30,11 @@ export const ProfileProvider = ({children}) => {
         }
     }
 
-    const signup = async (firstName, lastName, handle, email, password, date) => {
+    const signup = async (firstName, lastName, handle, email, password, date, avatarImage) => {
         try { // TODO: move this to service
             const response = await api
                 .post("http://localhost:4000/api/signup",
-                    { email, password, firstName, lastName, handle, date})
+                    { email, password, firstName, lastName, handle, date, avatarImage})
             setProfile(response.data)
         } catch (e) { throw e }
     }

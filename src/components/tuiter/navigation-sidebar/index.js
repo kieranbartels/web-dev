@@ -13,10 +13,10 @@ const NavigationSidebar = (
 
     const logout = async () => {
         await service.logout()
-        navigate('/signin')
+        navigate('/login')
     }
     const login = async () => {
-        navigate('/signin')
+        navigate('/login')
     }
 
     return(
@@ -41,7 +41,7 @@ const NavigationSidebar = (
                 </a>
 
                 <a className={`list-group-item
-                    ${pathname === '/tuiter/weather' ? 'active' : ''}`} href="/tuiter/search">
+                    ${pathname === '/tuiter/search' ? 'active' : ''}`} href="/tuiter/search">
                     <span className="fa fa-cloud"></span>
                     <span className="d-none d-xl-inline"> Weather</span></a>
 
